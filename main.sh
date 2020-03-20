@@ -83,7 +83,7 @@ echo
 echo -e "3/5 ${LCYAN}Making ESlint and Prettier play nice with each other... ${NC}"
 echo "See https://github.com/prettier/eslint-config-prettier for more details."
 echo
-npm i -D eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node
+npm i -D eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node babel-eslint
 
 echo
 echo -e "4/5 ${YELLOW}Building your .eslintrc.json file...${NC}"
@@ -92,6 +92,13 @@ touch .eslintrc.json
 echo '{
   "extends": ["airbnb", "prettier", "plugin:node/recommended"],
   "plugins": ["prettier"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
   "rules": {
     "prettier/prettier": "error",
     "no-unused-vars": "warn",
