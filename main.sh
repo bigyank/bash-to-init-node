@@ -75,15 +75,15 @@ echo
 npm i -D eslint prettier
 
 echo
-echo -e "2/5 ${YELLOW}Conforming to Airbnb's JavaScript Style Guide... ${NC}"
-echo
-npx install-peerdeps --dev eslint-config-airbnb
-
-echo
 echo -e "3/5 ${LCYAN}Making ESlint and Prettier play nice with each other... ${NC}"
 echo "See https://github.com/prettier/eslint-config-prettier for more details."
 echo
-npm i -D eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node babel-eslint
+npm i -D eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node
+
+echo
+echo -e "2/5 ${YELLOW}Conforming to Airbnb's JavaScript Style Guide... ${NC}"
+echo
+npx install-peerdeps --dev eslint-config-airbnb
 
 echo
 echo -e "4/5 ${YELLOW}Building your .eslintrc.json file...${NC}"
