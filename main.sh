@@ -113,7 +113,7 @@ echo '{
 echo
 echo -e "5/5 ${YELLOW}Building your .prettierrc.json file... ${NC}"
 touch .prettierrc
-echo '{ "singleQuote": true }' > .prettierrc
+echo '{ "singleQuote": true, "endOfLine": "auto" }' > .prettierrc
 
 echo
 echo -e "${GREEN}Finished setting up!${NC}"
