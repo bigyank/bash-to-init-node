@@ -72,35 +72,13 @@ fi
 echo
 echo -e "1/5 ${LCYAN}ESLint & Prettier Installation... ${NC}"
 echo
-npm i -D eslint prettier
+npm i -D eslint && npm install --save-dev --save-exact prettier
 
 echo
-echo -e "3/5 ${LCYAN}Making ESlint and Prettier play nice with each other... ${NC}"
-echo "See https://github.com/prettier/eslint-config-prettier for more details."
+echo -e "3/5 ${LCYAN}Choose Eslint seetings ${NC}"
 echo
-npm i -D eslint-config-prettier
+npx eslint --init
 
-echo
-echo -e "2/5 ${YELLOW}Conforming to Airbnb's JavaScript Style Guide... ${NC}"
-echo
-npx install-peerdeps --dev eslint-config-airbnb-base
-echo
-echo -e "4/5 ${YELLOW}Building your .eslintrc.json file...${NC}"
-touch .eslintrc.json
-
-echo '{
-  "extends": ["airbnb-base", "prettier", ],
-  "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true,
-    "jest": true,
-    "node": true
-  },
-  "rules": {
-    "no-console": "off",
-  }
-}'> .eslintrc.json
 
 echo
 echo -e "5/5 ${YELLOW}Building your .prettierrc.json file... ${NC}"
