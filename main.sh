@@ -78,20 +78,18 @@ echo
 echo -e "3/5 ${LCYAN}Making ESlint and Prettier play nice with each other... ${NC}"
 echo "See https://github.com/prettier/eslint-config-prettier for more details."
 echo
-npm i -D eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node
+npm i -D eslint-config-prettier
 
 echo
 echo -e "2/5 ${YELLOW}Conforming to Airbnb's JavaScript Style Guide... ${NC}"
 echo
-npx install-peerdeps --dev eslint-config-airbnb
-
+npx install-peerdeps --dev eslint-config-airbnb-base
 echo
 echo -e "4/5 ${YELLOW}Building your .eslintrc.json file...${NC}"
 touch .eslintrc.json
 
 echo '{
-  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
-  "plugins": ["prettier"],
+  "extends": ["airbnb-base", "prettier", ],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -100,13 +98,7 @@ echo '{
     "node": true
   },
   "rules": {
-    "prettier/prettier": "error",
-    "no-unused-vars": "warn",
     "no-console": "off",
-    "func-names": "off",
-    "no-process-exit": "off",
-    "object-shorthand": "off",
-    "class-methods-use-this": "off"
   }
 }'> .eslintrc.json
 
